@@ -2,9 +2,6 @@
 
 This repository gives a Python implementation for some classical stochastic approximation algorithms, e.g., Robbins-Monro algorithm and Kiefer-Wolfowitz algorithm, along with the results of a few experiments.
 
-* Table of Content
-{:toc}
-
 ## Robbins-Monro algorithm
 ### Description
 The Robbins-Monro algorithm was proposed by Robbins and Monro (1951) and gradually improved by many authors. Here we state the version of Blum (1954).
