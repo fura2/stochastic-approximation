@@ -12,7 +12,7 @@ true_solution = 0.0
 
 
 def true_func(x: float) -> float:
-    return x ** 3 + 2.0 * np.sin(x)
+    return x + 2.0 * np.sin(x)
 
 
 def noise(x: float) -> float:
