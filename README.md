@@ -7,14 +7,18 @@ This repository gives a Python implementation for some classical stochastic appr
 The Robbins-Monro algorithm was proposed by Robbins and Monro (1951) and gradually improved by many authors. Here we state the version of Blum (1954).
 
 Let $\{H(\cdot|x)\}_{x\in\mathbb{R}}$ be a family of distribution functions and let
-$$
-    M(x) = \int_\mathbb{R}y\,\mathrm{d}H(y\mid x)\quad\text{for $x\in\mathbb{R}$}
-$$
+
+```math
+M(x) = \int_\mathbb{R}y\,\mathrm{d}H(y\mid x)\quad\text{for $x\in\mathbb{R}$}
+```
+
 be a measurable function. We can't know $M(x)$ directly, but we can choose any $x\in\mathbb{R}$ and sample according to the distribution $H(\cdot|x)$.
 In this setting, we want to approximate the solution $x=\theta$ to
-$$
-    M(x)=\alpha
-$$
+
+```math
+M(x)=\alpha
+```
+
 for a given $\alpha\in\mathbb{R}$.
 
 We assume the following.
@@ -24,19 +28,22 @@ We assume the following.
 4. $\displaystyle\inf_{\varepsilon\le|x-\theta|\le\varepsilon^{-1}}|M(x)-\alpha|>0$ for $\varepsilon>0$.
 
 Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers such that
-$$
+
+```math
 \sum_{n=1}^\infty a_n=\infty\quad\text{and}\quad\sum_{n=1}^\infty a_n^2<\infty.
-$$
+```
+
 For any $x_1\in\mathbb{R}$, define a sequence $(x_n)_{n=1}^\infty$ of random variables as
-$$
-    x_{n+1} = x_n + a_n(\alpha - y_n),
-$$
+```math
+x_{n+1} = x_n + a_n(\alpha - y_n),
+```
+
 where $y_n$ is a random variable distributed according to $H(\cdot\mid x_n)$.
 Then, Blum (1954) proved that $x_n\overset{\textrm{a.s.}}{\longrightarrow}\theta$ as $n\to\infty$.
 
 ### Experiments
 Set $M(x)=x+2\sin x$ and $H(\cdot\mid x)=\mathcal{N}(M(x),1)$ (the normal distribution of mean $M(x)$ and variance $1$). Here is the graph of $M(x)$.
-<div style="text-align: center;">
+<div align="center">
     <img src="resource/M.png" width="30%">
 </div>
 
@@ -53,7 +60,7 @@ done
 python plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
                -o resource/0.png --alpha 0.5
 ```
-<div style="text-align: center;">
+<div align="center">
     <img src="resource/0.png" width="50%">
 </div>
 
@@ -69,7 +76,7 @@ done
 python plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
                -o resource/1.png --alpha 0.5
 ```
-<div style="text-align: center;">
+<div align="center">
     <img src="resource/1.png" width="50%">
 </div>
 
@@ -85,7 +92,7 @@ done
 python plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
                -o resource/2.png --alpha 0.5
 ```
-<div style="text-align: center;">
+<div align="center">
     <img src="resource/2.png" width="50%">
 </div>
 
