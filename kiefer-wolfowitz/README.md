@@ -20,7 +20,7 @@ We assume the following.
 1. $\exists\sigma>0$ s.t. $\displaystyle\int_\mathbb{R}(y-M(x))^2\,\mathrm{d}H(y\mid x)\le\sigma^2$ for $x\in\mathbb{R}$.
     - This is the same as assumption 2 in the Robbins-Monro algorithm.
 1. $M(x)$ is strictly increasing for $x\le\theta$ and strictly decreasing for $x\ge\theta$.
-1. $\exists\rho>0,R>0$ s.t. $|x-x'|<\rho$ $|M(x)-M(x')|\le R$.
+1. $\exists\rho>0,R>0$ s.t. $|x-x'|<\rho$ $|M(x)-M(x')|< R$.
 1. $\forall\delta>0$, $\exists\pi(\delta)>0$ s.t. $\displaystyle|x-\theta|>\delta\Longrightarrow\inf_{0<\varepsilon<\delta/2}\frac{|M(x+\epsilon)-M(x-\epsilon)|}{\varepsilon}>\pi(\delta)$.
 
 Let $(a_n)_{n=1}^\infty$ and $(c_n)_{n=1}^\infty$ be sequences of positive numbers satisfying
