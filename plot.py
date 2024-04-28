@@ -34,6 +34,7 @@ def main() -> None:
         ys = [float(row['error']) for row in rows]
         plt.plot(xs, ys, linewidth=0.5, alpha=alpha, label=f'sample {i+1}')
 
+    plt.xlim(left=1)
     plt.xlabel('Step')
     plt.ylabel('Error')
     plt.xscale('log')

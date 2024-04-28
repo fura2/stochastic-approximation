@@ -7,8 +7,8 @@ import numpy as np
 
 ################# Manual setup ##################
 
-target_value = 0.0
-true_solution = 0.0
+target_value = 0.0   # α
+true_solution = 0.0  # θ
 
 
 def true_func(x: float) -> float:
@@ -29,13 +29,13 @@ def observe(x: float) -> float:
 def robbins_monro(n_steps: int, step_coef: float, step_power: float) -> list[float]:
     """
     Compute a sample path until `n_steps` steps by the Robbins-Monro algorithm.
-    The n-th step size a_n is defined by a_n = c / n^e. where c = `step_coef` and e = `step_power`.
+    The n-th step size a_n is defined by a_n = c / n^p, where c = `step_coef` and p = `step_power`.
     """
     x = np.random.uniform(low=-10.0, high=10.0)
     path = [x]
-    for i in range(n_steps):
+    for i in range(1, n_steps):
+        a = step_coef / i**step_power
         y = observe(x)
-        a = step_coef / (i + 1)**step_power
         x += a * (target_value - y)
         path.append(x)
     return path

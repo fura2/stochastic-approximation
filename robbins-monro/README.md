@@ -24,7 +24,7 @@ We assume the following.
 1. $M(x)<\alpha$ for $x<\theta$,&nbsp; $M(x)>\alpha$ for $x>\theta$.
 1. $\displaystyle\inf_{\varepsilon\le|x-\theta|\le1/\varepsilon}|M(x)-\alpha|>0$ for $\varepsilon>0$.
 
-Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers such that
+Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers satisfying
 
 ```math
 \sum_{n=1}^\infty a_n = \infty\quad\text{and}\quad\sum_{n=1}^\infty a_n^2<\infty.
@@ -38,6 +38,8 @@ x_{n+1} = x_n + a_n(\alpha - y_n),
 
 where $y_n$ is a random variable distributed according to $H(\cdot\mid x_n)$.
 Then, Blum (1954) proved that $x_n\overset{\textrm{a.s.}}{\longrightarrow}\theta$ as $n\to\infty$.
+
+Note that we actually find $\theta$ which satisfies assumption 3, and hence we don't need to assume $M(\theta)=\alpha$.
 
 ## Experiments
 Set $M(x)=x+2\sin x$ and $H(\cdot\mid x)=\mathcal{N}(M(x),1)$ (the normal distribution of mean $M(x)$ and variance $1$). Here is the graph of $M(x)$.
@@ -53,10 +55,10 @@ All assumptions stated above are satisfied.
 $5$ sample paths until $n=10^6$ are plotted. Here, the $x$-axis represents $n$ and the $y$-axis respresents $|x_n-\theta|$.
 ```bash
 for i in {0..4}; do
-    python run.py 1000000 outputs/${i}.csv --step-power 1 --seed ${i}
+    python run.py 1000000 outputs/${i}.csv --seed ${i}
 done
 python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
-               -o ../resource/0.png --alpha 0.5
+                  -o ../resource/0.png --alpha 0.5
 ```
 <div align="center">
     <img src="../resource/0.png" width="50%">
@@ -72,7 +74,7 @@ for i in {0..4}; do
     python run.py 1000000 outputs/${i}.csv --step-power 1.5 --seed ${i}
 done
 python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
-               -o ../resource/1.png --alpha 1.0
+                  -o ../resource/1.png --alpha 1.0
 ```
 <div align="center">
     <img src="../resource/1.png" width="50%">
@@ -88,7 +90,7 @@ for i in {0..4}; do
     python run.py 1000000 outputs/${i}.csv --step-power 0.5 --seed ${i}
 done
 python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
-               -o ../resource/2.png --alpha 0.5
+                  -o ../resource/2.png --alpha 0.5
 ```
 <div align="center">
     <img src="../resource/2.png" width="50%">
@@ -100,13 +102,13 @@ Each sample path may converge to $\theta$ but the convergence speed is significa
 Assumption 1 does not hold.
 
 ```bash
-sed -i '' 's/x + 2.0 \* np.sin(x)/x ** 3 + 2.0 \* np.sin(x)/g' run.py
+sed -i '' 's/x + 2.0 \* np.sin(x)/x \*\* 3 + 2.0 \* np.sin(x)/g' run.py
 for i in {0..4}; do
-    python run.py 1000000 outputs/${i}.csv --step-power 1 --seed ${i}
+    python run.py 10000 outputs/${i}.csv --seed ${i}
 done
-sed -i '' 's/x ** 3 + 2.0 \* np.sin(x)/x + 2.0 \* np.sin(x)/g' run.py
+sed -i '' 's/x \*\* 3 + 2.0 \* np.sin(x)/x + 2.0 \* np.sin(x)/g' run.py
 python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
-               -o ../resource/3.png --alpha 1.0
+                  -o ../resource/3.png --alpha 1.0
 ```
 <div align="center">
     <img src="../resource/3.png" width="50%">
@@ -124,14 +126,14 @@ In fact, $M(x)$ has multiple zeros as shown in the following graph.
 ```bash
 sed -i '' 's/x + 2.0 \* np.sin(x)/x + 7.0 \* np.sin(x)/g' run.py
 for i in {0..4}; do
-    python run.py 1000000 outputs/${i}.csv --step-power 1 --seed ${i}
+    python run.py 1000000 outputs/${i}.csv --seed ${i}
 done
 sed -i '' 's/x + 7.0 \* np.sin(x)/x + 2.0 \* np.sin(x)/g' run.py
 python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
-               -o ../resource/4.png --alpha 0.5
+                  -o ../resource/4.png --alpha 0.5
 ```
 <div align="center">
     <img src="../resource/4.png" width="50%">
 </div>
 
-Some sample path converged to other zero of $M$.
+Some sample path converged to one of the other zero of $M$.
