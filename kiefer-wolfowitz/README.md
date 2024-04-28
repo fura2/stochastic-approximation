@@ -39,7 +39,7 @@ where $y_{2n}$ and $y_{2n-1}$ are independent random variables distributed accor
 Then, Blum (1954) proved that $x_n\overset{\textrm{a.s.}}{\longrightarrow}\theta$ as $n\to\infty$.
 
 ## Experiments
-Set $M(x)=-|x|$ and $H(\cdot\mid x)=\mathcal{N}(M(x),1)$ (the normal distribution of mean $M(x)$ and variance $1$). Here is the graph of $M(x)$.
+Set $M(x)=-|x|$ and $H(\cdot\mid x)=\mathcal{N}(M(x),1)$ (the normal distribution of mean $M(x)$ and variance $1$). Here is the graph of $M$.
 <div align="center">
     <img src="../resource/M3.png" width="40%">
 </div>
