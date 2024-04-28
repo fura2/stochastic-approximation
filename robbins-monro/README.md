@@ -20,8 +20,8 @@ for a given $\alpha\in\mathbb{R}$.
 
 We assume the following.
 1. $\exists c>0$ s.t. $|M(x)|\le c(1+|x|)$ for $x\in\mathbb{R}$.
-1. $\exists\sigma>0$ s.t. $\displaystyle\int_\mathbb{R}(y-M(x))^2\,\mathrm{d}H(y\mid x)\le\sigma^2$ for $x\in\mathbb{R}$.
-1. $M(x)<\alpha$ for $x<\theta$,&nbsp; $M(x)>\alpha$ for $x>\theta$.
+1. $\exists\sigma>0$ s.t. $\displaystyle\int_\mathbb{R}(y-M(x))^2 \,\mathrm{d}H(y\mid x)\le\sigma^2$ for $x\in\mathbb{R}$.
+1. $M(x)<\alpha$ for $x<\theta$&nbsp;&nbsp;and&nbsp;&nbsp;$M(x)>\alpha$ for $x>\theta$.
 1. $\displaystyle\inf_{\varepsilon\le|x-\theta|\le1/\varepsilon}|M(x)-\alpha|>0$ for $\varepsilon>0$.
 
 Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers satisfying
@@ -80,7 +80,7 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
     <img src="../resource/1.png" width="50%">
 </div>
 
-Each sample path converged somewhere too early. Could not reach to $\theta$.
+Each sample path converged somewhere too early. They could not reach to $\theta$.
 
 ### Experiment 3. $a_n=1/n^{0.5}$
 One of the assumption $\displaystyle\sum_{n=1}^\infty a_n^2<\infty$ does not hold.
