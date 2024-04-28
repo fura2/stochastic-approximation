@@ -82,7 +82,7 @@ def main() -> None:
     with output_path.open('w', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=['step', 'value', 'error'])
         writer.writeheader()
-        writer.writerows([{'step': i, 'value': x, 'error': np.abs(x - true_solution)}
+        writer.writerows([{'step': i + 1, 'value': x, 'error': np.abs(x - true_solution)}
                           for i, x in enumerate(result)])
 
 

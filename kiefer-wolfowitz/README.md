@@ -61,12 +61,15 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
     <img src="../resource/5.png" width="50%">
 </div>
 
-### Experiment 2. $a_n=1/n^{1.5}$ and $c_n=1/n^{0.5}$
-One of the assumption $\displaystyle\sum_{n=1}^\infty a_n=\infty$ does not hold.
+All sample paths appear to converge to $\theta$.
+The convergence speed is not so fast though.
+
+### Experiment 2. $a_n=1/n$ and $c_n=0.01$
+One of the assumption $\displaystyle\lim_{n\to\infty}c_n = 0$ does not hold.
 
 ```bash
 for i in {0..4}; do
-    python run.py 1000000 outputs/${i}.csv --step-power-a 1.5 --step-power-c 0.5 --seed ${i}
+    python run.py 1000000 outputs/${i}.csv --step-coef-c 0.01 --step-power-c 0.0 --seed ${i}
 done
 python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
                   -o ../resource/6.png --alpha 1.0
@@ -75,9 +78,25 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
     <img src="../resource/6.png" width="50%">
 </div>
 
+Some sample paths converged somewhere different from $\theta$.
+
+### Experiment 3. $a_n=1/n^{1.5}$ and $c_n=1/n^{0.5}$
+One of the assumption $\displaystyle\sum_{n=1}^\infty a_n=\infty$ does not hold.
+
+```bash
+for i in {0..4}; do
+    python run.py 1000000 outputs/${i}.csv --step-power-a 1.5 --step-power-c 0.5 --seed ${i}
+done
+python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
+                  -o ../resource/7.png --alpha 1.0
+```
+<div align="center">
+    <img src="../resource/7.png" width="50%">
+</div>
+
 Some sample paths converged somewhere too early. They could not reach to $\theta$.
 
-### Experiment 3. $a_n=1/n$ and $c_n=1/n^{0.5}$
+### Experiment 4. $a_n=1/n$ and $c_n=1/n^{0.5}$
 One of the assumption $\displaystyle\sum_{n=1}^\infty\frac{a_n^2}{c_n^2}\lt\infty$ does not hold.
 
 ```bash
@@ -85,10 +104,10 @@ for i in {0..4}; do
     python run.py 1000000 outputs/${i}.csv --step-power-c 0.5 --seed ${i}
 done
 python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
-                  -o ../resource/7.png --alpha 1.0
+                  -o ../resource/8.png --alpha 0.5
 ```
 <div align="center">
-    <img src="../resource/7.png" width="50%">
+    <img src="../resource/8.png" width="50%">
 </div>
 
 Each sample path did not converge. The variance of $x_n$ is very large.
