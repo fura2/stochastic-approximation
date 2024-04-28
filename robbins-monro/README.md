@@ -3,7 +3,7 @@
 ## Description
 The Robbins-Monro algorithm was proposed by Robbins and Monro (1951) and gradually improved by many authors. Here we state the version of Blum (1954).
 
-Let $\{H(\cdot|x)\}_{x\in\mathbb{R}}$ be a family of distribution functions and let
+Let $\\{H(\cdot|x)\\}_{x\in\mathbb{R}}$ be a family of distribution functions and let
 
 ```math
 M(x) = \int_\mathbb{R}y\,\mathrm{d}H(y\mid x)\quad\text{for $x\in\mathbb{R}$}
@@ -19,10 +19,10 @@ M(x) = \alpha
 for a given $\alpha\in\mathbb{R}$.
 
 We assume the following.
-1. $\exists c>0$ s.t. $|M(x)|\le c(1+|x|)$ for $x\in\mathbb{R}$.
-1. $\exists\sigma>0$ s.t. $\displaystyle\int_\mathbb{R}(y-M(x))^2 \,\mathrm{d}H(y\mid x)\le\sigma^2$ for $x\in\mathbb{R}$.
-1. $M(x)<\alpha$ for $x<\theta$&nbsp;&nbsp;and&nbsp;&nbsp;$M(x)>\alpha$ for $x>\theta$.
-1. $\displaystyle\inf_{\varepsilon\le|x-\theta|\le1/\varepsilon}|M(x)-\alpha|>0$ for $\varepsilon>0$.
+1. $\exists c\gt 0$ s.t. $|M(x)|\le c(1+|x|)$ for $x\in\mathbb{R}$.
+1. $\exists\sigma\gt 0$ s.t. $\displaystyle\int_\mathbb{R}(y-M(x))^2\mathrm{d}H(y\mid x)\le\sigma^2$ for $x\in\mathbb{R}$.
+1. $M(x)\lt\alpha$ for $x\lt\theta$&nbsp;&nbsp;and&nbsp;&nbsp;$M(x)\gt\alpha$ for $x\gt\theta$.
+1. $\displaystyle\inf_{\varepsilon\le|x-\theta|\le1/\varepsilon}|M(x)-\alpha|\gt 0$ for $\varepsilon>0$.
 
 Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers satisfying
 

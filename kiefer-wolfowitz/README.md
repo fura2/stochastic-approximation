@@ -3,7 +3,7 @@
 ## Description
 The Kiefer-Wolfowitz algorithm was proposed by Kiefer and Wolfowitz (1952). Here we state the version of Blum (1954).
 
-Let $\{H(\cdot|x)\}_{x\in\mathbb{R}}$ be a family of distribution functions and let
+Let $\\{H(\cdot|x)\\}_{x\in\mathbb{R}}$ be a family of distribution functions and let
 
 ```math
 M(x) = \int_\mathbb{R}y\,\mathrm{d}H(y\mid x)\quad\text{for $x\in\mathbb{R}$}
@@ -17,11 +17,11 @@ M(\theta) = \max_{x\in\mathbb{R}}M(x).
 ```
 
 We assume the following.
-1. $\exists\sigma>0$ s.t. $\displaystyle\int_\mathbb{R}(y-M(x))^2 \,\mathrm{d}H(y\mid x)\le\sigma^2$ for $x\in\mathbb{R}$.
+1. $\exists\sigma>0$ s.t. $\displaystyle\int_\mathbb{R}(y-M(x))^2\mathrm{d}H(y\mid x)\le\sigma^2$ for $x\in\mathbb{R}$.
     - This is the same as assumption 2 in the [Robbins-Monro algorithm](../robbins-monro/).
 1. $M(x)$ is strictly increasing for $x\le\theta$ and strictly decreasing for $x\ge\theta$.
-1. $\exists\rho>0,R>0$ s.t. $|x-x'|<\rho\Longrightarrow|M(x)-M(x')|< R$.
-1. $\forall\delta>0$, $\exists\pi(\delta)>0$ s.t. $\displaystyle|x-\theta|>\delta\Longrightarrow\inf_{0<\varepsilon<\delta/2}\frac{|M(x+\epsilon)-M(x-\epsilon)|}{\varepsilon}>\pi(\delta)$.
+1. $\exists\rho\gt 0,R\gt 0$ s.t. $|x-x'|\lt\rho\Longrightarrow|M(x)-M(x')|\lt R$.
+1. $\forall\delta\gt 0$, $\exists\pi(\delta)\gt 0$ s.t. $\displaystyle|x-\theta|\gt\delta\Longrightarrow\inf_{0<\varepsilon<\delta/2}\frac{|M(x+\epsilon)-M(x-\epsilon)|}{\varepsilon}\gt\pi(\delta)$.
 
 Let $(a_n)_{n=1}^\infty$ and $(c_n) _ {n=1}^\infty$ be sequences of positive numbers satisfying
 
