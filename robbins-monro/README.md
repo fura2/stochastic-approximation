@@ -21,7 +21,7 @@ for a given $\alpha\in\mathbb{R}$.
 We assume the following.
 1. $\exists c\gt 0$ s.t. $|M(x)|\le c(1+|x|)$ for $x\in\mathbb{R}$.
 1. $\exists\sigma\gt 0$ s.t. $\displaystyle\int_\mathbb{R}(y-M(x))^2\mathrm{d}H(y\mid x)\le\sigma^2$ for $x\in\mathbb{R}$.
-1. $M(x)\lt\alpha$ for $x\lt\theta$&nbsp;&nbsp;and&nbsp;&nbsp;$M(x)\gt\alpha$ for $x\gt\theta$.
+1. $M(x)\lt\alpha$ for $x\lt\theta$ &nbsp;&nbsp;and&nbsp;&nbsp; $M(x)\gt\alpha$ for $x\gt\theta$.
 1. $\displaystyle\inf_{\varepsilon\le|x-\theta|\le1/\varepsilon}|M(x)-\alpha|\gt 0$ for $\varepsilon>0$.
 
 Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers satisfying
@@ -83,7 +83,7 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
 Each sample path converged somewhere too early. They could not reach to $\theta$.
 
 ### Experiment 3. $a_n=1/n^{0.5}$
-One of the assumption $\displaystyle\sum_{n=1}^\infty a_n^2<\infty$ does not hold.
+One of the assumption $\displaystyle\sum_{n=1}^\infty a_n^2\lt\infty$ does not hold.
 
 ```bash
 for i in {0..4}; do

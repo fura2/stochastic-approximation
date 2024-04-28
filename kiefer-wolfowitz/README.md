@@ -76,3 +76,19 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
 </div>
 
 Some sample paths converged somewhere too early. They could not reach to $\theta$.
+
+### Experiment 3. $a_n=1/n$ and $c_n=1/n^{0.5}$
+One of the assumption $\displaystyle\sum_{n=1}^\infty\frac{a_n^2}{c_n^2}\lt\infty$ does not hold.
+
+```bash
+for i in {0..4}; do
+    python run.py 1000000 outputs/${i}.csv --step-power-c 0.5 --seed ${i}
+done
+python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv outputs/4.csv \
+                  -o ../resource/7.png --alpha 1.0
+```
+<div align="center">
+    <img src="../resource/7.png" width="50%">
+</div>
+
+Each sample path did not converge. The variance of $x_n$ is very large.
