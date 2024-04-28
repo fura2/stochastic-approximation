@@ -42,7 +42,7 @@ Then, Blum (1954) proved that $x_n\overset{\textrm{a.s.}}{\longrightarrow}\theta
 Note that we actually find $\theta$ which satisfies assumption 3, and hence we don't need to assume $M(\theta)=\alpha$.
 
 ## Experiments
-Set $M(x)=x+2\sin x$ and $H(\cdot\mid x)=\mathcal{N}(M(x),1)$ (the normal distribution of mean $M(x)$ and variance $1$). Here is the graph of $M(x)$.
+Set $M(x)=x+2\sin x$ and $H(\cdot\mid x)=\mathcal{N}(M(x),1)$ (the normal distribution of mean $M(x)$ and variance $1$). Here is the graph of $M$.
 <div align="center">
     <img src="../resource/M1.png" width="40%">
 </div>
