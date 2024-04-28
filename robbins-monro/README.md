@@ -96,7 +96,7 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
     <img src="../resource/2.png" width="50%">
 </div>
 
-Each sample path may converge to $\theta$ but the convergence speed is significantly slow. The variance of $|x_n-\theta|$ is very large.
+Each sample path may converge to $\theta$ but the convergence speed is significantly slow compared to experiment 1. The variance of $x_n$ is very large.
 
 ### Experiment 4. $M(x)=x^3+2\sin x$ and $a_n=1/n$
 Assumption 1 does not hold.
