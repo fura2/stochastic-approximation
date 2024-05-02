@@ -10,14 +10,14 @@ Assume that the expected value
 M(x) = \mathbb{E}\lbrack Y(x)\rbrack
 ```
 
-exists for any $x\in\mathbb{R}$ and that $M:\mathbb{R}\to\mathbb{R}$ be a measurable function.
+exists for any $x\in\mathbb{R}$ and that $M:\mathbb{R}\to\mathbb{R}$ is a measurable function.
 
 We can't know $M(x)$ directly, but we can choose any $x\in\mathbb{R}$ and sample according to $Y(x)$.
 In this setting, we want to find the *root* of $M$.
 
-Let $\theta\in\mathbb{R}$. We assume that $M$ satisfies the following properties.
-1. $\exists C\gt 0,\exists D\gt 0$ s.t. $|M(x)|\le C+D|x|$ for $x\in\mathbb{R}$.
+Let $\theta\in\mathbb{R}$. We assume that $Y$ and $M$ satisfy the following properties.
 1. $\exists\sigma\gt 0$ s.t. $\mathrm{Var}(Y(x))\le\sigma^2$ for $x\in\mathbb{R}$.
+1. $\exists C\gt 0,\exists D\gt 0$ s.t. $|M(x)|\le C+D|x|$ for $x\in\mathbb{R}$.
 1. $\displaystyle\sup_{\theta-1/\varepsilon\lt x\lt\theta-\varepsilon}M(x)\lt 0$ and $\displaystyle\inf_{\theta+\varepsilon\lt x\lt\theta+1/\varepsilon}M(x)\gt 0$ for $\varepsilon>0$.
 
 Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers satisfying
@@ -27,7 +27,7 @@ Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers satisfying
 \sum_{n=1}^\infty a_n^2 \lt \infty.
 ```
 
-For any $x_1\in\mathbb{R}$, define a sequence $(x_n)_{n=1}^\infty$ of numbers as
+For any $x_1\in\mathbb{R}$, define a sequence $(x_n)_{n=1}^\infty$ as
 
 ```math
 x_{n+1} = x_n - a_n y_n,
@@ -47,7 +47,7 @@ Set $M(x)=x+2\sin x$ and $Y(x)=\mathcal{N}(M(x),1)$ (the normal distribution of 
 The root of $M$ is $\theta=0$. $x_1$ is sampled from $[-10,10]$ uniformly.
 
 ### Experiment 1. $a_n=1/n$
-All assumptions stated above are satisfied.
+All assumptions are satisfied.
 
 $5$ sample paths until $n=10^6$ are plotted. Here, the $x$-axis represents $n$ and the $y$-axis represents $|x_n-\theta|$.
 ```bash
@@ -93,10 +93,10 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
     <img src="../resource/2.png" width="50%">
 </div>
 
-Each sample path may converge to $\theta$ but the convergence speed is significantly slow compared to experiment 1. The variance of $x_n$ is very large.
+Each sample path may converge to $\theta$ but the speed of convergence is significantly slow compared to experiment 1. The variance of $x_n$ is very large.
 
 ### Experiment 4. $M(x)=|x|x+2\sin x$ and $a_n=1/n$
-Assumption 1 does not hold.
+Assumption 2 does not hold.
 
 ```bash
 sed -i '' 's/x + 2.0 \* np.sin(x)/x \* np.abs(x) + 2.0 \* np.sin(x)/g' run.py
@@ -133,4 +133,4 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
     <img src="../resource/4.png" width="50%">
 </div>
 
-A sample path converged to one of the other zero of $M$.
+A sample path converged to one of the other zeros of $M$.

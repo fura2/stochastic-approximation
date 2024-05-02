@@ -7,7 +7,7 @@ import numpy as np
 
 ################## Manual setup ##################
 
-true_solution = 0.0  # The root θ, only used for computing errors
+true_solution = 0.0  # The root θ, only for visualizing purpose
 
 
 def true_func(x: float) -> float:
@@ -15,8 +15,9 @@ def true_func(x: float) -> float:
 
 
 def observe(x: float) -> float:
+    mu = true_func(x)
     sigma = 1.0
-    return np.random.normal(loc=true_func(x), scale=sigma)
+    return np.random.normal(loc=mu, scale=sigma)
 
 ##################################################
 

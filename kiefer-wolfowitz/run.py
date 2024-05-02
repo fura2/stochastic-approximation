@@ -5,31 +5,28 @@ from pathlib import Path
 import numpy as np
 
 
-################# Manual setup ##################
+################## Manual setup ##################
 
-true_solution = 0.0  # θ
+true_solution = 0.0  # The maximizer θ, only for visualizing purpose
 
 
 def true_func(x: float) -> float:
     return -np.abs(x)
 
 
-def noise(x: float) -> float:
-    sigma = 1.0
-    return np.random.normal(loc=0.0, scale=sigma)
-
-#################################################
-
-
 def observe(x: float) -> float:
-    return true_func(x) + noise(x)
+    mu = true_func(x)
+    sigma = 1.0
+    return np.random.normal(loc=mu, scale=sigma)
+
+##################################################
 
 
 def kiefer_wolfowitz(n_steps: int, step_coef_a: float, step_power_a: float,
                      step_coef_c: float, step_power_c: float) -> list[float]:
     """
     Compute a sample path until `n_steps` steps by the Kiefer-Wolfowitz algorithm.
-    The n-th step sizes a_n and c_n is defined by
+    The n-th step sizes a_n and c_n are defined by
       a_n = d / n^p and c_n = e / n^q,
     where d = `step_coef_a`, p = `step_power_a`, e = `step_coef_c`, q = `step_power_c`.
     """
