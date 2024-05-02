@@ -5,25 +5,20 @@ from pathlib import Path
 import numpy as np
 
 
-################# Manual setup ##################
+################## Manual setup ##################
 
-target_value = 0.0   # α
-true_solution = 0.0  # θ
+true_solution = 0.0  # The root θ, only used for computing errors
 
 
 def true_func(x: float) -> float:
     return x + 2.0 * np.sin(x)
 
 
-def noise(x: float) -> float:
-    sigma = 1.0
-    return np.random.normal(loc=0.0, scale=sigma)
-
-#################################################
-
-
 def observe(x: float) -> float:
-    return true_func(x) + noise(x)
+    sigma = 1.0
+    return np.random.normal(loc=true_func(x), scale=sigma)
+
+##################################################
 
 
 def robbins_monro(n_steps: int, step_coef: float, step_power: float) -> list[float]:
@@ -36,7 +31,7 @@ def robbins_monro(n_steps: int, step_coef: float, step_power: float) -> list[flo
     for i in range(1, n_steps):
         a = step_coef / i**step_power
         y = observe(x)
-        x += a * (target_value - y)
+        x -= a * y
         path.append(x)
     return path
 
