@@ -18,8 +18,8 @@ In this setting, we want to find the maximizer of $M$.
 For $f:\mathbb{R}\to\mathbb{R}$, the upper and lower derivatives of $f$ are defined by
 
 ```math
-\overline{D}f(x) = \limsup_{h\to 0, h\ne 0}\frac{f(x+h)-f(x)}{h},\quad
-\underline{D}f(x) = \liminf_{h\to 0, h\ne 0}\frac{f(x+h)-f(x)}{h}.
+\overline{D}f(x) = \limsup_{\substack{h\to 0 \\ h\ne 0}}\frac{f(x+h)-f(x)}{h},\quad
+\underline{D}f(x) = \liminf_{\substack{h\to 0 \\ h\ne 0}}\frac{f(x+h)-f(x)}{h}.
 ```
 
 Note that when $f$ is differentiable, both of them coincide with $f'(x)$.
