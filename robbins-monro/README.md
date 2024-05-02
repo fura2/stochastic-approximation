@@ -1,7 +1,7 @@
 # Robbins-Monro algorithm
 
 ## Description
-The Robbins-Monro algorithm was proposed by Robbins and Monro (1951) and was generalized by many people. Here we state the version proved by Section 7 of Dvoretzky (1956).
+The Robbins-Monro algorithm was proposed by Robbins and Monro (1951) and was generalized by many people. Here we state the version proved in Section 7 of Dvoretzky (1956).
 
 Let $\lbrace Y(x)\rbrace_{x\in\mathbb{R}}$ be a family of $\mathbb{R}$-valued random variables.
 Assume that the expected value
@@ -17,7 +17,7 @@ In this setting, we want to find the *root* of $M$.
 
 Let $\theta\in\mathbb{R}$. We assume that $Y$ and $M$ satisfy the following properties.
 1. $\exists\sigma\gt 0$ s.t. $\mathrm{Var}(Y(x))\le\sigma^2$ for $x\in\mathbb{R}$.
-1. $\exists C\gt 0,\exists D\gt 0$ s.t. $|M(x)|\le C+D|x|$ for $x\in\mathbb{R}$.
+1. $\exists C_1\gt 0,\exists C_2\gt 0$ s.t. $|M(x)|\le C_1+C_2|x|$ for $x\in\mathbb{R}$.
 1. $\displaystyle\sup_{\theta-1/\varepsilon\lt x\lt\theta-\varepsilon}M(x)\lt 0$ and $\displaystyle\inf_{\theta+\varepsilon\lt x\lt\theta+1/\varepsilon}M(x)\gt 0$ for $\varepsilon>0$.
 
 Let $(a_n)_{n=1}^\infty$ be a sequence of positive numbers satisfying

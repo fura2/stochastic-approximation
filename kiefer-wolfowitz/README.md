@@ -1,7 +1,7 @@
 # Kiefer-Wolfowitz algorithm
 
 ## Description
-The Kiefer-Wolfowitz algorithm was proposed by Kiefer and Wolfowitz (1952) and was generalized by many people. Here we state the version proved by Section 7 of Dvoretzky (1956).
+The Kiefer-Wolfowitz algorithm was proposed by Kiefer and Wolfowitz (1952) and was generalized by many people. Here we state the version proved in Section 7 of Dvoretzky (1956).
 
 Let $\lbrace Y(x)\rbrace_{x\in\mathbb{R}}$ be a family of $\mathbb{R}$-valued random variables.
 Assume that the expected value
@@ -26,7 +26,7 @@ Note that when $f$ is differentiable, both of them coincide with $f'(x)$.
 
 Let $\theta\in\mathbb{R}$. We assume that $Y$ and $M$ satisfy the following properties.
 1. $\exists\sigma\gt 0$ s.t. $\mathrm{Var}(Y(x))\le\sigma^2$ for $x\in\mathbb{R}$.
-1. $\exists C\gt 0,\exists D\gt 0$ s.t. $|M(x+1)-M(x)|\le C+D|x|$ for $x\in\mathbb{R}$.
+1. $\exists C_1\gt 0,\exists C_2\gt 0$ s.t. $|M(x+1)-M(x)|\le C_1+C_2|x|$ for $x\in\mathbb{R}$.
 1. $\displaystyle\inf_{\theta-1/\varepsilon\lt x\lt\theta-\varepsilon}\underline{D}M(x)\gt 0$ and $\displaystyle\sup_{\theta+\varepsilon\lt x\lt\theta+1/\varepsilon}\overline{D}M(x)\lt 0$ for $\varepsilon>0$.
 
 Let $(a_n)_{n=1}^\infty$ and $(c_n) _ {n=1}^\infty$ be sequences of positive numbers satisfying
@@ -156,7 +156,7 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
 </div>
 
 All sample paths diverged.
-Constant $x_n$ values after some moment caused by catastrophic cancellations. Actually, $y_{2n} = y_{2n-1}$ occured in the sense of double precision.
+Constant $x_n$ values after some moment are caused by catastrophic cancellations. Actually, $y_{2n} = y_{2n-1}$ occured in the sense of double precision.
 
 ### Experiment 6. $M(x)=-|x|+2\cos x$, $a_n=1/n$, and $c_n=1/\sqrt[3]{n}$
 Assumption 3 does not hold.
