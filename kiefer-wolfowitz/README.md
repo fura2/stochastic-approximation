@@ -54,7 +54,7 @@ Set $M(x)=-|x|$ and $Y(x)=\mathcal{N}(M(x),1)$ (the normal distribution of mean 
 
 The maximizer of $M$ is $\theta=0$. $x_1$ is sampled from $[-10,10]$ uniformly.
 
-### Experiment 1. $a_n=1/n$ and $c_n=1/\sqrt[3]{n}$
+### Experiment 1. $a_n=1/n$ and $c_n=1/\sqrt[6]{n}$
 All assumptions are satisfied.
 
 $5$ sample paths until $n=10^6$ are plotted. Here, the $x$-axis represents $n$ and the $y$-axis represents $|x_n-\theta|$.
@@ -71,7 +71,6 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
 
 Looks good.
 All sample paths appear to converge to $\theta$.
-The speed of convergence is not so fast though.
 
 ### Experiment 2. $a_n=1/n$ and $c_n=0.01$
 One of the assumption $\displaystyle\lim_{n\to\infty}c_n = 0$ does not hold.
@@ -119,9 +118,9 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
     <img src="../resource/8.png" width="50%">
 </div>
 
-Each sample path appear not to converge. The variance of $x_n$ is very large.
+All sample paths appear not to converge. The variance of $x_n$ is very large.
 
-### Experiment 5. $M(x)=-x^2$, $a_n=1/n$, and $c_n=1/\sqrt[3]{n}$
+### Experiment 5. $M(x)=-x^2$, $a_n=1/n$, and $c_n=1/\sqrt[6]{n}$
 All assumptions are satisfied.
 
 ```bash
@@ -139,7 +138,7 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
 
 Looks good.
 
-### Experiment 5. $M(x)=-|x|^3$, $a_n=1/n$, and $c_n=1/\sqrt[3]{n}$
+### Experiment 6. $M(x)=-|x|^3$, $a_n=1/n$, and $c_n=1/\sqrt[6]{n}$
 Assumption 2 does not hold.
 
 ```bash
@@ -158,7 +157,7 @@ python ../plot.py outputs/0.csv outputs/1.csv outputs/2.csv outputs/3.csv output
 All sample paths diverged.
 Constant $x_n$ values after some moment are caused by catastrophic cancellations. Actually, $y_{2n} = y_{2n-1}$ occured in the sense of double precision.
 
-### Experiment 6. $M(x)=-|x|+2\cos x$, $a_n=1/n$, and $c_n=1/\sqrt[3]{n}$
+### Experiment 7. $M(x)=-|x|+2\cos x$, $a_n=1/n$, and $c_n=1/\sqrt[6]{n}$
 Assumption 3 does not hold.
 In fact, $M(x)$ has local maximums as shown in the following graph.
 <div align="center">

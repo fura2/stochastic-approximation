@@ -52,8 +52,8 @@ def parse_args():
                         help='Exponent in the step size a_n (Default: 1.0)')
     parser.add_argument('-C', '--step-coef-c', type=float, default=1.0,
                         help='Coefficient in the step size c_n (Default: 1.0)')
-    parser.add_argument('-P', '--step-power-c', type=float, default=1/3,
-                        help='Exponent in the step size c_n (Default: 1/3)')
+    parser.add_argument('-P', '--step-power-c', type=float, default=1/6,
+                        help='Exponent in the step size c_n (Default: 1/6)')
     parser.add_argument('-s', '--seed', type=int, default=42,
                         help='Seed of RNG (Default: 42)')
     return parser.parse_args()
