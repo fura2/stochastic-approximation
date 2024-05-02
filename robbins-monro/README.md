@@ -13,7 +13,7 @@ M(x) = \mathbb{E}\lbrack Y(x)\rbrack
 exists for any $x\in\mathbb{R}$ and that $M:\mathbb{R}\to\mathbb{R}$ is a measurable function.
 
 We can't know $M(x)$ directly, but we can choose any $x\in\mathbb{R}$ and sample according to $Y(x)$.
-In this setting, we want to find the *root* of $M$.
+In this setting, we want to find the "root" of $M$.
 
 Let $\theta\in\mathbb{R}$. We assume that $Y$ and $M$ satisfy the following properties.
 1. $\exists\sigma\gt 0$ s.t. $\mathrm{Var}(Y(x))\le\sigma^2$ for $x\in\mathbb{R}$.
